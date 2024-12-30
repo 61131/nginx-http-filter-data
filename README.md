@@ -4,7 +4,7 @@ RFC 2397 "data" URL scheme filter module for Nginx
 
 The RFC 2397 "data" URL scheme provides a means for the inclusion of small data items as "immediate" data, as if it had been included externally. This mechanism is widely used within applications that need to embed (small) media type data directly inline.
 
-The nginx-http-filter-data module provides a mechanism for presenting on-disk content in this RFC 2397 "data" URL scheme.
+This module provides a mechanism for presenting Nginx-delivered content in this RFC 2397 "data" URL scheme.
 
 ## Build
 
@@ -41,6 +41,8 @@ load_module modules/nginx_http_filter_data_module.so;
 * **context:** `location`
 
 Enables the application of this filter module for all content within the current location.
+
+All content served from the current location will be presented with the Content-Type of "text/plain" and encoded in the RFC 2397 "data" URL scheme.
 
 ## References
 
